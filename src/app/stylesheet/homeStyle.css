@@ -1,0 +1,149 @@
+@import url("./variables.css");
+
+.home-screen h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: aliceblue;
+  margin: 80px 70px 30px 80px;
+}
+
+.home-screen .content-p {
+  color: honeydew;
+  font-size: 19px;
+  margin: 0px 50px 50px 80px;
+}
+
+.home-screen .dev-image {
+  background-color: var(--secondary_color);
+}
+
+.home-screen .dev-content {
+  background-color: var(--primary_color);
+}
+
+.home-screen .backgroundShape{
+  position:absolute;
+  left: 53%;
+  top: 15%
+}
+
+.dev-sub-intro {
+  font-size: 15px;
+  margin: 6rem 4rem;
+  padding-top: 20px;
+}
+
+.dev-content p{
+ width: fit-content;
+}
+
+
+.hero-section {
+  height: 100dvh;
+}
+
+.hero-row {
+  height: 90vh;
+  padding: 2rem 0; /* replaces py-5 */
+}
+
+.hero-col {
+  height: 90vh;
+  display: grid;
+  justify-content: space-between;
+}
+
+.hero-inner-row {
+  display: grid;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.hero-title {
+  color: var(--primary_color);
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  width: 75%;
+  text-align: justify;
+}
+
+.hero-text {
+  padding-top: 2rem; /* replaces pt-5 */
+}
+
+.hero-image-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.dev-article{
+  background-color: #F9F9F9;
+  height: 90vh;
+}
+
+.article-container{
+  margin: 25px auto;
+  background-color:white;
+  height: 80vh;
+  border-radius: 5px;
+}
+
+.article-header{
+  margin-top: 30px;
+  color: var(--primary_color);
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.article-content{
+  padding:20px;
+}
+
+.article-paragraph{
+  font-size: 25px;
+  width: 280px;
+  margin-top: 30px;
+}
+
+.article-move-button {
+  margin-top: 50px;
+  width: 400px;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid var(--primary_color);
+  background: linear-gradient(to right, var(--primary_color) 0%, var(--primary_color) 0%, white 0%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  color: var(--primary_color);
+  font-size: 20px;
+  font-weight: 400;
+  transition: background-size 0.4s ease, color 0.4s ease;
+}
+
+.article-move-button:hover {
+  background-size: 100% 100%;
+  color: white;
+  background: var(--primary_color);
+}
+
+
+/* project */
+
+.dev-works{
+  background-color: #F9F9F9;
+}
+.project-container{
+  margin: 10px 120px;
+}
+
+.project-card{
+  border: none;
+  width: 360px;
+}

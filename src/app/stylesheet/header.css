@@ -1,0 +1,30 @@
+@import url("./variables.css");
+
+.header-logo {
+    background-color: var(--primary_color);
+}
+
+.header-menu {
+    background-color: var(--secondary_color);
+}
+
+.header-menu-bar {
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.open-menu-bar {
+    z-index: 1;
+    position: absolute;
+    padding: 20px 30px;
+    width: 30%;
+    background: rgba(0, 0, 0, 0.433);
+}
+
+.open-menu-bar li {
+    list-style: none;
+    color: aliceblue
+}
+
+

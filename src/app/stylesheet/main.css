@@ -1,0 +1,8 @@
+/* :root{
+    --primary_color:#3c0088;
+    --primary_color:#f5fffa;
+} */
+
+@import url("./homeStyle.css");
+@import url("./header.css");
+@import url("./footer.css");

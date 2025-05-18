@@ -1,0 +1,33 @@
+@import url("./variables.css");
+.dev-footer{
+    background: navy;
+    height: 70dvh;
+}
+
+.footer-container{
+    padding: 120px 80px;
+}
+.footer-title{
+    font-size: 20px;
+    color: white;
+    letter-spacing: 12px;
+}
+
+.footer-content{
+    margin-top: 25px;
+}
+
+.footer-content h4{
+    color: var(--secondary_color);
+    font-size: 18px;
+    font-weight: 400;
+    padding:5px;
+}
+
+.footer-strike{
+    color: var(--secondary_color);
+}
+
+.footer-final{
+    color: var(--secondary_color);
+}
