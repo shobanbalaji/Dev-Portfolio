@@ -7,7 +7,7 @@ import Image from "next/image";
 import backgroundShape from "../../assets/shapes/homeScreenShape.svg";
 import shape3 from "../../assets/shapes/shape3.svg";
 import shape2 from "../../assets/shapes/shape2.svg";
-import shoban from "../../assets/images/handsome.png";
+import shoban from "../../assets/images/handsome.jpeg";
 import backgroundShape1 from "../../assets/shapes/project.svg"
 const HomePage = () => {
 
@@ -49,6 +49,7 @@ const HomePage = () => {
               width={470}
               alt="backgroundShape"
               className="backgroundShape"
+              style={{objectFit:"cover"}}
             />
           </Col>
           <Col md={4} sm={12} className="px-5 dev-image">
