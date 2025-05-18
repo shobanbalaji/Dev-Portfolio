@@ -147,3 +147,23 @@
   border: none;
   width: 360px;
 }
+
+.project-section{
+  height: 100vh;
+  background-color: var(--primary_color); 
+}
+
+.project-section h2{
+  font-size: 35px;
+  color: var(--secondary_color);
+  font-weight: bold;
+}
+
+.project-section p{
+  font-size: 17px;
+  color: ghostwhite;
+  width: 500px;
+  font-weight: 400;
+  padding: 7px;
+}
+

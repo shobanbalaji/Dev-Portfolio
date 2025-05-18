@@ -8,7 +8,7 @@ import backgroundShape from "../../assets/shapes/homeScreenShape.svg";
 import shape3 from "../../assets/shapes/shape3.svg";
 import shape2 from "../../assets/shapes/shape2.svg";
 import shoban from "../../assets/images/handsome.png";
-
+import backgroundShape1 from "../../assets/shapes/project.svg"
 const HomePage = () => {
 
   const nav = useRouter();
@@ -106,6 +106,45 @@ const HomePage = () => {
         </Row>
       </section>
 
+      <section className="project-section">
+        <Row className="align-items-center">
+          <Col md={6} className="p-5 ">
+            <h2> Over the years,</h2>
+
+            <p>
+              I've built products for companies and businesses around the globe
+              ranging from marketing websites to complex solutions and
+              enterprise apps with focus on fast, elegant and accessible user
+              experiences.
+            </p>
+
+            <p>
+              Currently, I work at Shopify as a Senior Frontend Engineer
+              crafting thoughtful and inclusive experiences that adhere to web
+              standards for over 3 million merchants across the world.
+            </p>
+            <p>
+              Before now, I was Principal Frontend Engineer at hellotax, where I
+              worked on a suite of tools and services tailored towards automated
+              VAT compliance for multi-channel sellers in Europe.
+            </p>
+            <p>
+              Prior tobhellotax, I was Senior frontend engineering consultant
+              with Pixel2HTML, building JavaScript applications and interfaces
+              for orgs and individuals.
+            </p>
+            <p>
+              I once also led the frontend team at Conectar, an e-learning
+              startup through building multiple React applications into a single
+              robust learning platform.
+            </p>
+          </Col>
+          <Col md={6} className="p-5">
+            <Image alt="im" src={backgroundShape1} className=""  height={700} width={600}/>
+          </Col>
+        </Row>
+      </section>
+
       <section className="dev-article pt-4">
         <Row className="article-container container">
           <Col
@@ -121,24 +160,35 @@ const HomePage = () => {
               Open source projects, web apps and experimentals.
             </p>
 
-            <button className="article-move-button" onClick={()=>nav.push("/project")}> See My Works</button>
+            <button
+              className="article-move-button"
+              onClick={() => nav.push("/project")}
+            >
+              {" "}
+              See My Works
+            </button>
           </Col>
 
-          <Col md={6} className="article-content">
+          <Col md={6} className="article-content ps-5">
             <h2 className="article-header">
               I write,
               <br /> sometimes
             </h2>
 
             <p className="article-paragraph">
-              About design, frontend dev, learning <br/> and life.
+              About design, frontend dev, learning <br /> and life.
             </p>
 
-            <button className="article-move-button" onClick={()=>nav.push("/article")}> Read My Article</button>
+            <button
+              className="article-move-button"
+              onClick={() => nav.push("/article")}
+            >
+              {" "}
+              Read My Article
+            </button>
           </Col>
         </Row>
       </section>
-
     </>
   );
 };
