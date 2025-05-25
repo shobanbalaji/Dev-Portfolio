@@ -200,7 +200,7 @@
   }
 
   .dev-sub-intro p{
-    font-size: 11px !important;
+    font-size: 11.5px !important;
     font-weight: 400 !important;
   }
 
@@ -321,4 +321,19 @@
   .project-container{
     margin: 10px 20px !important;
   }
+  .menu-bar-mobile{
+    display: block !important;
+  }
+
+  .open-menu-bar {
+    z-index: 1;
+    background: #0000006e;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px 30px;
+    position: absolute;
+    top: 109px;
+    right: 25px;
+  }
+
 }
