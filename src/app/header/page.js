@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useRef} from "react";
 import { Col, Row } from "react-bootstrap";
 import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 
 const Header = ({isBackground=true}) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,6 +43,7 @@ const Header = ({isBackground=true}) => {
     <>
       <Row>
         <Col md={8}  className="header-logo" style={{ ...( !isBackground && { backgroundColor: "inherit"} )}}>
+        <div className="d-flex justify-content-between align-items-center pe-3"> 
           <h3
             className="py-5 ps-5 header-logo-text"
             onClick={()=>window.location.reload()}
@@ -54,22 +57,25 @@ const Header = ({isBackground=true}) => {
             }}
           >
             {" "}
-            shbnmllx
+            Shbnmllx
           </h3>
+
+          <GiHamburgerMenu className="menu-bar-mobile"  ref={menuRef} onClick={handleShowMenu} size={23} color="white"/>
+
+        </div>
+
         </Col>
         <Col md={4} sm={3} className="header-menu text-end" style={{ ...( !isBackground && { background: 'none' } )}}>
           <div className="header-menu-bar py-5" style={{paddingRight:"3rem"}}>
-            <button
-            ref={menuRef}
-              onClick={handleShowMenu}
-              style={{ border: "none", background: "transparent" }}
-            >
-              {" "}
-              X{" "}
-            </button>
+          <GiHamburgerMenu className="menu-bar-web"  ref={menuRef} onClick={handleShowMenu} size={23} color="white" style={{cursor:"pointer"}}/>
+          
           </div>
 
-          {menuOpen && (
+
+        </Col>
+          
+      </Row>
+                {menuOpen && (
             <>
               <div className="open-menu-bar">
                 <div className="d-grid my-2">
@@ -88,9 +94,6 @@ const Header = ({isBackground=true}) => {
               </div>
             </>
           )}
-        </Col>
-          
-      </Row>
     </>
   );
 };

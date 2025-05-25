@@ -27,7 +27,7 @@ const Footer = () => {
           <Col>
           <Row className="justify-content-end"> 
             <Col> <span style={{cursor:"pointer"}}>TW </span> </Col>
-            <Col> <span style={{cursor:"pointer"}}>IN </span> </Col>
+            <Col> <span style={{cursor:"pointer"}}>IG </span> </Col>
             <Col> <span style={{cursor:"pointer"}}>LN </span> </Col>
           </Row>
 

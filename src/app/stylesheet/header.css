@@ -20,11 +20,18 @@
     padding: 20px 30px;
     width: 30%;
     background: rgba(0, 0, 0, 0.433);
+    border-radius: 5px;
+    right: 50px;
+    top: 85px;
 }
 
 .open-menu-bar li {
     list-style: none;
     color: aliceblue
+}
+
+.menu-bar-mobile{
+    display: none;
 }
 
 
