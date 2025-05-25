@@ -20,6 +20,7 @@
     padding: 20px 30px;
     width: 30%;
     background: rgba(0, 0, 0, 0.433);
+    border-radius: 5px;
 }
 
 .open-menu-bar li {

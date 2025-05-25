@@ -54,7 +54,7 @@ const Header = ({isBackground=true}) => {
             }}
           >
             {" "}
-            shbnmllx
+            Shbnmllx
           </h3>
         </Col>
         <Col md={4} sm={3} className="header-menu text-end" style={{ ...( !isBackground && { background: 'none' } )}}>
