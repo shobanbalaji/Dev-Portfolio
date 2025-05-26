@@ -13,18 +13,18 @@ const Header = ({isBackground=true}) => {
     setMenuOpen(!menuOpen);
   };
   // Close menu on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //       setMenuOpen(false);
+  //     }
+  //   };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, []);
   const navigationMenu = [
     {
       name: "Blog",
@@ -40,7 +40,7 @@ const Header = ({isBackground=true}) => {
     },
   ];
   return (
-    <>
+    <header>
       <Row>
         <Col md={8}  className="header-logo" style={{ ...( !isBackground && { backgroundColor: "inherit"} )}}>
         <div className="d-flex justify-content-between align-items-center pe-3"> 
@@ -75,7 +75,7 @@ const Header = ({isBackground=true}) => {
         </Col>
           
       </Row>
-                {menuOpen && (
+          {menuOpen && (
             <>
               <div className="open-menu-bar">
                 <div className="d-grid my-2">
@@ -94,7 +94,7 @@ const Header = ({isBackground=true}) => {
               </div>
             </>
           )}
-    </>
+    </header>
   );
 };
 

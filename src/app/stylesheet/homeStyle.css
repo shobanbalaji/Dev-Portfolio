@@ -67,7 +67,7 @@
 }
 
 .expertise-description {
-  width: 75%;
+  width: 95%;
   text-align: justify;
 }
 
@@ -149,7 +149,7 @@
 }
 
 .project-section{
-  height: 100vh;
+  height: auto;
   background-color: var(--primary_color); 
 }
 
@@ -160,11 +160,13 @@
 }
 
 .project-section p{
-  font-size: 17px;
+  font-size: 15px;
   color: ghostwhite;
   width: 500px;
   font-weight: 400;
   padding: 7px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif  ;
+  text-align: justify;
 }
 
 @media (max-width: 775px) {
