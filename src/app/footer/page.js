@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 const Footer = () => {
   return (
     <footer className="dev-footer">
-      <div className="footer-container p-5">
+      <div className="footer-container px-5 pt-5 pb-3">
         <h5 className="footer-title pt-5">SAY HELLO</h5>
 
         <Row className="justify-content-start footer-content">
@@ -26,9 +26,9 @@ const Footer = () => {
           <Col> <h4> Copyrights shbnmllx</h4> </Col>
           <Col>
           <Row className="justify-content-end"> 
-            <Col> <span style={{cursor:"pointer"}}>TW </span> </Col>
-            <Col> <span style={{cursor:"pointer"}}>IG </span> </Col>
-            <Col> <span style={{cursor:"pointer"}}>LN </span> </Col>
+            <Col> <span style={{cursor:"pointer", fontSize:"15px"}}>TW </span> </Col>
+            <Col> <span style={{cursor:"pointer", fontSize:"15px"}}>IG </span> </Col>
+            <Col> <span style={{cursor:"pointer", fontSize:"15px"}}>LN </span> </Col>
           </Row>
 
           </Col>

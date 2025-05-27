@@ -1,7 +1,8 @@
 @import url("./variables.css");
 .dev-footer{
-    background: navy;
-    height: 70vh;
+    background: rgb(29, 29, 148);
+    /* background: black; */
+    height: auto;
 }
 
 .footer-container{
@@ -19,7 +20,7 @@
 
 .footer-content h4{
     color: var(--secondary_color);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     padding:5px;
 }
@@ -30,4 +31,5 @@
 
 .footer-final{
     color: var(--secondary_color);
+    font-size: 16px;
 }

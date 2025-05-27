@@ -5,7 +5,7 @@ import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
-const Header = ({isBackground=true}) => {
+const Header = ({isBackground=true, menuColor = "white"}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef()
 
@@ -13,40 +13,45 @@ const Header = ({isBackground=true}) => {
     setMenuOpen(!menuOpen);
   };
   // Close menu on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //       setMenuOpen(false);
+  //     }
+  //   };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, []);
   const navigationMenu = [
+    {
+      name: "Home",
+      link: "/",
+    },
     {
       name: "Blog",
       link: "./blog",
     },
     {
       name: "Project",
-      link: "$",
+      link: "./project",
     },
     {
       name: "Contact",
       link: "./contact",
     },
   ];
+  
   return (
-    <>
+    <header>
       <Row>
-        <Col md={8}  className="header-logo" style={{ ...( !isBackground && { backgroundColor: "inherit"} )}}>
+        <Col  className="header-logo" style={{ ...( !isBackground && { backgroundColor: "inherit"} )}}>
         <div className="d-flex justify-content-between align-items-center pe-3"> 
           <h3
             className="py-5 ps-5 header-logo-text"
-            onClick={()=>window.location.reload()}
+            onClick={() => (window.location.href = "/")}
             style={{
               fontSize: "35px",
               fontWeight: "bold",
@@ -60,14 +65,14 @@ const Header = ({isBackground=true}) => {
             Shbnmllx
           </h3>
 
-          <GiHamburgerMenu className="menu-bar-mobile"  ref={menuRef} onClick={handleShowMenu} size={23} color="white"/>
+          <GiHamburgerMenu className="menu-bar-mobile"  ref={menuRef} onClick={handleShowMenu} size={23} color={menuColor}/>
 
         </div>
 
         </Col>
         <Col md={4} sm={3} className="header-menu text-end" style={{ ...( !isBackground && { background: 'none' } )}}>
           <div className="header-menu-bar py-5" style={{paddingRight:"3rem"}}>
-          <GiHamburgerMenu className="menu-bar-web"  ref={menuRef} onClick={handleShowMenu} size={23} color="white" style={{cursor:"pointer"}}/>
+          <GiHamburgerMenu className="menu-bar-web"  ref={menuRef} onClick={handleShowMenu} size={23} color={menuColor} style={{cursor:"pointer"}}/>
           
           </div>
 
@@ -75,7 +80,7 @@ const Header = ({isBackground=true}) => {
         </Col>
           
       </Row>
-                {menuOpen && (
+          {menuOpen && (
             <>
               <div className="open-menu-bar">
                 <div className="d-grid my-2">
@@ -94,7 +99,7 @@ const Header = ({isBackground=true}) => {
               </div>
             </>
           )}
-    </>
+    </header>
   );
 };
 
