@@ -11,7 +11,7 @@ import shoban from "../../assets/images/handsome.jpeg";
 import backgroundShape1 from "../../assets/shapes/project.svg"
 const HomePage = () => {
 
-  const nav = useRouter();
+  const nav = useRouter(null);
   return (
     <>
       <Header />

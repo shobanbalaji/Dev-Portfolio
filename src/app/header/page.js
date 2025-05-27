@@ -3,13 +3,13 @@ import React, { useState, useEffect, useRef} from "react";
 import { Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 
 const Header = ({isBackground=true, menuColor = "white"}) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef()
-  const nav = useRouter()
+  const menuRef = useRef();
+  const nav = useRouter(null);
 
   const handleShowMenu = () => {
     setMenuOpen(!menuOpen);
@@ -53,7 +53,7 @@ const Header = ({isBackground=true, menuColor = "white"}) => {
         <div className="d-flex justify-content-between align-items-center pe-3"> 
           <h3
             className="py-5 ps-5 header-logo-text"
-            onClick={() => (nav.push('/'))}
+            onClick={()=>nav.push('/home')}
             style={{
               fontSize: "35px",
               fontWeight: "bold",
