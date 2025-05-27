@@ -4,6 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useRouter } from "next/navigation";
+import { LuAudioLines } from "react-icons/lu";
 
 
 const Header = ({isBackground=true, menuColor = "white"}) => {
@@ -45,15 +46,32 @@ const Header = ({isBackground=true, menuColor = "white"}) => {
       link: "./contact",
     },
   ];
+
+    const audioRef = useRef(null);
+
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  };
   
   return (
     <header>
       <Row>
         <Col  className="header-logo" style={{ ...( !isBackground && { backgroundColor: "inherit"} )}}>
-        <div className="d-flex justify-content-between align-items-center pe-3"> 
+          <audio  ref={audioRef} src="/audio/intro1.mp3" type="audio/mpeg" />
+         <div className="d-flex justify-content-between align-items-center pe-3"> 
           <h3
             className="py-5 ps-5 header-logo-text"
-            onClick={()=>nav.push('/home')}
             style={{
               fontSize: "35px",
               fontWeight: "bold",
@@ -64,7 +82,8 @@ const Header = ({isBackground=true, menuColor = "white"}) => {
             }}
           >
             {" "}
-            Shbnmllx
+            <span onClick={()=>nav.push('/')}> Shbnmllx </span>
+            <span> <LuAudioLines className="menu-bar-web" onClick={handlePlayPause} style={{cursor:"pointer"}} size={18} color={menuColor}  title="voice of shoban"/> </span>  
           </h3>
 
           <GiHamburgerMenu className="menu-bar-mobile"  ref={menuRef} onClick={handleShowMenu} size={23} color={menuColor}/>
@@ -75,7 +94,6 @@ const Header = ({isBackground=true, menuColor = "white"}) => {
         <Col md={4} sm={3} className="header-menu text-end" style={{ ...( !isBackground && { background: 'none' } )}}>
           <div className="header-menu-bar py-5" style={{paddingRight:"3rem"}}>
           <GiHamburgerMenu className="menu-bar-web"  ref={menuRef} onClick={handleShowMenu} size={23} color={menuColor} style={{cursor:"pointer"}}/>
-          
           </div>
 
 
