@@ -40,14 +40,14 @@ const Contact = () => {
       <Header isBackground={false} menuColor={"#aaa"} />
 
       <Row className="dev-contact">
-        <h1 className="text-center"> Ask me Anything!</h1>
+        <h1 className="text-center"> Have a Project in Mind? Let’s Talk !</h1>
 
         <Form className="px-5 contact-form" onSubmit={handleSubmit}>
           <Form.Label>Name</Form.Label>
           <Form.Control
             name="name"
             type="text"
-            placeholder="sung"
+            placeholder="name"
             value={message.name}
             onChange={handleChange}
             required
@@ -57,7 +57,7 @@ const Contact = () => {
           <Form.Control
             name="email"
             type="email"
-            placeholder="sung@email.com"
+            placeholder="your@email.com"
             value={message.email}
             onChange={handleChange}
             required
@@ -67,7 +67,7 @@ const Contact = () => {
           <Form.Control
             name="message"
             as="textarea"
-            placeholder="Hello, type your message here"
+            placeholder="Feel free to share your thoughts..."
             value={message.message}
             onChange={handleChange}
             required  

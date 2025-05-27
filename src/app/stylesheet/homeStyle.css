@@ -231,6 +231,14 @@
   color: var(--primary_color);
 }
 
+/* Target all Form.Control placeholders */
+.form-control::placeholder {
+  color:rgba(255, 255, 255, 0.764); /* your desired color */
+  opacity: 1; /* optional: ensures full opacity */
+}
+
+
+
 @media (max-width: 775px) {
 
   .backgroundShape{
