@@ -5,7 +5,7 @@ import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
-const Header = ({isBackground=true}) => {
+const Header = ({isBackground=true, menuColor = "white"}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef()
 
@@ -27,26 +27,31 @@ const Header = ({isBackground=true}) => {
   // }, []);
   const navigationMenu = [
     {
+      name: "Home",
+      link: "/",
+    },
+    {
       name: "Blog",
       link: "./blog",
     },
     {
       name: "Project",
-      link: "$",
+      link: "./project",
     },
     {
       name: "Contact",
       link: "./contact",
     },
   ];
+  
   return (
     <header>
       <Row>
-        <Col md={8}  className="header-logo" style={{ ...( !isBackground && { backgroundColor: "inherit"} )}}>
+        <Col  className="header-logo" style={{ ...( !isBackground && { backgroundColor: "inherit"} )}}>
         <div className="d-flex justify-content-between align-items-center pe-3"> 
           <h3
             className="py-5 ps-5 header-logo-text"
-            onClick={()=>window.location.reload()}
+            onClick={() => (window.location.href = "/")}
             style={{
               fontSize: "35px",
               fontWeight: "bold",
@@ -60,14 +65,14 @@ const Header = ({isBackground=true}) => {
             Shbnmllx
           </h3>
 
-          <GiHamburgerMenu className="menu-bar-mobile"  ref={menuRef} onClick={handleShowMenu} size={23} color="white"/>
+          <GiHamburgerMenu className="menu-bar-mobile"  ref={menuRef} onClick={handleShowMenu} size={23} color={menuColor}/>
 
         </div>
 
         </Col>
         <Col md={4} sm={3} className="header-menu text-end" style={{ ...( !isBackground && { background: 'none' } )}}>
           <div className="header-menu-bar py-5" style={{paddingRight:"3rem"}}>
-          <GiHamburgerMenu className="menu-bar-web"  ref={menuRef} onClick={handleShowMenu} size={23} color="white" style={{cursor:"pointer"}}/>
+          <GiHamburgerMenu className="menu-bar-web"  ref={menuRef} onClick={handleShowMenu} size={23} color={menuColor} style={{cursor:"pointer"}}/>
           
           </div>
 

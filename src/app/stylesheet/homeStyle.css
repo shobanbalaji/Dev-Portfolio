@@ -169,6 +169,68 @@
   text-align: justify;
 }
 
+.blog-container{
+  margin: 40px;
+}
+
+.blog-container .blog-card{
+  height: 350px;
+  width: 350px;
+}
+
+.blog-container .blog-card .blog-image{
+  height: 230px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dev-contact{
+  margin:60px 180px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--primary_color);
+}
+
+.dev-contact h1{
+  color: var(--primary_color);
+  font-weight: bold;
+}
+
+.dev-contact .contact-form .form-control , .dev-contact.contact-form.form-control:focus-visible {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  box-shadow:none;
+  border-color: var(--primary_color);
+  border-radius: 0px;
+  background-color: transparent;
+  padding-left: 2px;
+}
+
+.dev-contact .contact-form .form-label{
+  color: var(--primary_color);
+  margin-top: 20px;
+}
+.dev-contact .contact-form button{
+  border-radius: 15px;
+  width: 25%;
+  padding: 15px !important;
+  border-color: #F9F9F9;
+  background: var(--primary_color) ;
+  font-size: 17px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dev-contact .contact-form button:hover{
+  border-radius:15px;
+  padding: 15px !important;
+  border-color: var(--secondary_color);
+  background: var(--secondary_color) ;
+  color: var(--primary_color);
+}
+
 @media (max-width: 775px) {
 
   .backgroundShape{
@@ -181,6 +243,10 @@
 
   .header-menu{
     display: none;
+  }
+
+  .home-screen{
+    height: auto !important;
   }
 
   .home-screen-section .dev-content p, .home-screen-section .dev-content h1 {
@@ -199,6 +265,12 @@
 
   .dev-sub-intro{
     margin: 10px 0px 70px;
+  }
+
+  .dev-image{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
   }
 
   .dev-sub-intro p{
@@ -220,7 +292,7 @@
   }
 
   .developer-expertise-container{
-    margin-top: 70px;
+    /* margin-top: 70px; */
     height: auto !important;
   }
 
@@ -338,4 +410,41 @@
     right: 25px;
   }
 
+  .blog-container {
+    margin: 0;
+    padding-bottom: 80px;
+  }
+
+  .blog-container .blog-card {
+    width: auto;
+    height: auto;
+  }
+
+  .dev-contact{
+    margin:  45px 10px 0px 10px;
+    background-color: var(--primary_color);
+  }
+  .contact-form{
+    padding: 0px !important;
+  }
+
+  .dev-contact .contact-form button{
+    width: 50%;
+    font-size:14px;
+    margin-top: 30px !important;
+  }
+  .dev-contact .contact-form .form-control , .dev-contact.contact-form.form-control:focus-visible {
+    color: white;
+    border-color: white;
+  }
+  .dev-contact .contact-form .form-label{
+    color: white;
+  }
+  .dev-contact h1{
+  color: var(--secondary_color);
+  font-weight: bold;
+  }
+.dev-contact .contact-form button{
+  background-color: transparent;
+}
 }

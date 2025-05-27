@@ -1,54 +1,62 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Header from '../header/page';
-import { Row, Col, Card } from 'react-bootstrap';
-import Link from 'next/link';
+import React from "react";
+import Header from "../header/page";
+import { Row, Col, Card } from "react-bootstrap";
+import Link from "next/link";
+import Image from "next/image";
+import im from "../../assets/images/logo.jpeg";
 
 const Projects = () => {
   const projectList = [
     {
-      image: "/images/project1.png",
-      name: "Portfolio Website",
-      link: "https://myportfolio.com"
+      projectImage: im,
+      projectName: "Portfolio Website",
+      link: "https://mystore.com",
+      projectDescription:"lorem ispum ......................................................................."
+
     },
     {
-      image: "/images/project2.png",
-      name: "E-commerce Store",
-      link: "https://mystore.com"
+      projectImage: im,
+      projectName: "E-commerce Store",
+      link: "https://mystore.com",
+      projectDescription:"lorem ispum ......................................................................."
     },
     {
-      image: "/images/project3.png",
-      name: "Blog Platform",
-      link: "https://myblog.com"
+      projectImage: im,
+      projectName: "Blog Platform",
+      link: "https://myblog.com",
+      projectDescription:"lorem ispum ......................................................................."
     },
     {
-      image: "/images/project4.png",  
-      name: "Task Manager App",
-      link: "https://taskapp.com"
-    }
+      projectImage: im,
+
+      projectName: "Task Manager App",
+      link: "https://taskapp.com",
+      projectDescription:"lorem ispum ......................................................................."
+    },
   ];
 
   return (
-    <div className="dev-works">
-      <Header isBackground={false} />
-      <h1 className="text-center py-4">/Projects</h1>
-      <p className="text-center py-2">See my work that I've worked on in the past</p>
+    <div className="dev-blogs">
+      <Header isBackground={false} menuColor={"#aaa"} />
+      <h1 className="text-center pt-4">/Projects</h1>
+      <p className="text-center py-2 px-4">See my work that I've worked on in the past</p>
 
-      <Row className="project-container justify-content-between">
-        {projectList.map((project, index) => (
-          <Col md={4} key={index} className="my-3">
-            <Card className='project-card shadow-sm'>
-              <Card.Img
+      <Row className="blog-container justify-content-between">
+        {projectList.map((blog, index) => (
+          <Col md={3} key={index} className="my-3">
+            <Card className="blog-card shadow-sm rounded">
+              <Image
+                className="blog-image"
                 variant="top"
-                src={project.image}
-                alt={project.name}
-                style={{ height: '200px', objectFit: 'cover' }}
+                src={blog.projectImage}
+                alt={blog.projectName}
               />
               <Card.Body>
-                <h5 className=''>{project.name}</h5>
-                <Link style={{textDecoration:"none"}} href={project.link}>
-                {project.link}
+                <h5 className="">{blog.projectName}</h5>
+                <Link style={{ textDecoration: "none" }} href={blog.link}>
+                  {blog.link}
                 </Link>
               </Card.Body>
             </Card>

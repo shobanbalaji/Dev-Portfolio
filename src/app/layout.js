@@ -1,5 +1,8 @@
 import "./globals.css";
-import Footer from "./footer/page";
+import FooterControl from "./component/FooterControl";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../app/stylesheet/main.css";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Shobanbalaji: Web developer | Gen AI",
@@ -24,8 +27,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        {children}
-        <Footer />
+        <Toaster position="top-center" />
+        <FooterControl>{children}</FooterControl>
       </body>
     </html>
   );
