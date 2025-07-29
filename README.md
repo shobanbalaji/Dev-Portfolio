@@ -1,2 +1,2 @@
 # Dev-Portfolio
-Shobanbalaji Portfolio - Full Stack Develpoer | Gen AI
+Shobanbalaji Portfolio - Full Stack Develper | Gen AI
