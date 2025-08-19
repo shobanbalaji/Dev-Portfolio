@@ -5,7 +5,7 @@ import Footer from "../footer/page";
 
 const FooterControl = ({ children }) => {
   const pathname = usePathname();
-  const hideFooterPaths = ["/contact"];
+  const hideFooterPaths = ["/contact","/createBlog"];
   const shouldRenderFooter = !hideFooterPaths.includes(pathname);
 
   return (
