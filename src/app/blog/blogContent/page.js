@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { db } from "@/app/firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import { Row, Col } from "react-bootstrap";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 
 
-export default function BlogDetail({ params }) {
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id"); // ✅ get ?id=xxx
+export default function BlogDetail({ searchParams }) {
+  const params = use(searchParams);
+  const id = params.id;
   const [blogContent, setBlogContent] = useState(null);
   const [isDark, setIsDark] = useState(true);
 
