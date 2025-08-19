@@ -1,41 +1,38 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../header/page";
 import { Row, Col, Card } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 import im from "../../assets/images/logo.jpeg";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebase";
+import { slugify } from "../utils/slugify";
 
-const page = () => {
-  const blogList = [
-    {
-      blogImage: im,
-      blogName: "Portfolio Website",
-      link: "https://mystore.com",
-      blogDescription:"lorem ispum ......................................................................."
+const Page = () => {
+  const [blogList, setBlogList] = useState([]);
 
-    },
-    {
-      blogImage: im,
-      blogName: "E-commerce Store",
-      link: "https://mystore.com",
-      blogDescription:"lorem ispum ......................................................................."
-    },
-    {
-      blogImage: im,
-      blogName: "Blog Platform",
-      link: "https://myblog.com",
-      blogDescription:"lorem ispum ......................................................................."
-    },
-    {
-      blogImage: im,
+  useEffect(() => {
+    const getBlogContent = async () => {
+      const blogRef = collection(db, "blogs");
+      const blogData = (await getDocs(blogRef)).docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
 
-      blogName: "Task Manager App",
-      link: "https://taskapp.com",
-      blogDescription:"lorem ispum ......................................................................."
-    },
-  ];
+      const blogReturns = blogData.map((blog) => ({
+        blogImage: im,
+        blogName: blog?.heading,
+        blogDescription: blog?.description,
+        slug: slugify(blog?.heading),
+        id: blog?.id,
+      }));
+
+      setBlogList(blogReturns);
+    };
+    getBlogContent();
+  }, []);
 
   return (
     <div className="dev-blogs">
@@ -46,20 +43,16 @@ const page = () => {
       </p>
 
       <Row className="blog-container justify-content-between">
-        {blogList.map((blog, index) => (
+        {blogList?.map((blog, index) => (
           <Col md={3} key={index} className="my-3">
             <Card className="blog-card shadow-sm rounded">
-              <Image
-                className="blog-image"
-                variant="top"
-                src={blog.blogImage}
-                alt={blog.blogName}
-              />
+              <Image className="blog-image" src={im} alt="blog image" />
               <Card.Body>
-                <h5 className="">{blog.blogName}</h5>
-                <Link style={{ textDecoration: "none" }} href={blog.link}>
-                  {blog.link}
-                </Link>
+                {/* ✅ Slug-based Link */}
+                <h5>
+                  <Link href={`/blog/blogContent?id=${blog.id}`}>{blog.blogName}</Link>
+                </h5>
+                <p>{blog?.blogDescription}</p>
               </Card.Body>
             </Card>
           </Col>
@@ -69,4 +62,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

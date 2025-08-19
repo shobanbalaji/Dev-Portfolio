@@ -210,7 +210,7 @@ const HomePage = () => {
 
             <button
               className="article-move-button"
-              onClick={() => nav.push("/article")}
+              onClick={() => nav.push("/blog")}
             >
               {" "}
               Read My Article
