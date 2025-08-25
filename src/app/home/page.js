@@ -9,6 +9,7 @@ import shape3 from "../../assets/shapes/shape3.svg";
 import shape2 from "../../assets/shapes/shape2.svg";
 import shoban from "../../assets/images/handsome.jpeg";
 import backgroundShape1 from "../../assets/shapes/project.svg"
+// import arjun from "../../assets/images/a"
 const HomePage = () => {
 
   const nav = useRouter();
@@ -38,7 +39,7 @@ const HomePage = () => {
               <Col>
                 <p>
                   Proven experience building successful products <br /> for
-                  clients across several countries.
+                  clients across several countries.   
                 </p>
               </Col>
             </Row>

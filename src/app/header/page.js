@@ -81,7 +81,7 @@ const Header = ({isBackground=true, menuColor = "white"}) => {
               ...( !isBackground && { color: "blue"} )
             }}
           >
-            {" "}
+            {" "}   
             <span onClick={()=>nav.push('/')}> Arjun </span>
             <span> <LuAudioLines className="menu-bar-web" onClick={handlePlayPause} style={{cursor:"pointer"}} size={18} color={menuColor}  title="voice of shoban"/> </span>  
           </h3>
