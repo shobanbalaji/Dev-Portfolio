@@ -37,8 +37,8 @@ const HomePage = () => {
               </Col>
               <Col>
                 <p>
-                  Proven experience building successful products  for
-                  clients across several countries.
+                 Proven experience building successful products 
+                 with measurable impact.
                 </p>
               </Col>
             </Row>

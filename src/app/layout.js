@@ -39,8 +39,39 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="30" className="rounded-pill"/>
+        <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+        {/* Keywords for SEO */}
+        <meta
+          name="keywords"
+          content="Shobanbalaji, Web Developer in Tamil Nadu, Full Stack Developer, Next.js Developer, Firebase Developer, React Developer, Gen AI Developer, Python Developer, Portfolio Developer India"
+        />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Shobanbalaji Developer",
+              url: "https://shoban-dev.web.app",
+              publisher: {
+                "@type": "Person",
+                name: "Shobanbalaji",
+                sameAs: [
+                  "https://github.com/shobanbalaji",
+                  "https://www.linkedin.com/in/shobanbalaji-v/"
+                ],
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://shoban-dev.web.app/favicon.ico",
+                },
+              },
+            }),
+          }}
+        />
       </head>
       <body>
         <Toaster position="top-center" />
@@ -49,3 +80,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
